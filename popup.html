@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Extension Popup</title>
+    <script src="popup.js"></script>
+    <style>
+      body {
+        width: 200px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+      }
+
+      .title {
+        margin-bottom: 50px;
+      }
+
+      .toggle {
+        position: relative;
+        display: inline-block;
+        width: 50px;
+        height: 24px;
+      }
+
+      .toggle input[type="checkbox"] {
+        display: none;
+      }
+
+      .toggle-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 24px;
+        transition: background-color 0.3s, transform 0.3s;
+        cursor: pointer;
+      }
+
+      .toggle-slider:before {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        transition: transform 0.3s;
+      }
+
+      .toggle input[type="checkbox"]:checked + .toggle-slider {
+        background-color: #66bb6a;
+      }
+
+      .toggle input[type="checkbox"]:checked + .toggle-slider:before {
+        transform: translateX(26px);
+      }
+    </style>
+  </head>
+  <body>
+    <h4 class="title">Next Short Made By Faraz Abir</h4>
+
+    <label class="toggle">
+      <input type="checkbox" id="toggle" />
+      <span class="toggle-slider"></span>
+    </label>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

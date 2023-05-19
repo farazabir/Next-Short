@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "YouTube Short Tracker",
+    "version": "1.0",
+    "description": "Tracks YouTube Shorts progress and performs actions when the video is finished.",
+    "permissions": ["tabs","scripting","storage","activeTab"],
+    "host_permissions": ["*://*.youtube.com/*"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action":{
+       "default_popup":"popup.html"
+    },
+    "icons": {
+      "128": "icon128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
